@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Church Admin Dashboard</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+
+    <style>
+        .sidebar{
+            border-bottom-right-radius: 50%;
+            background-color: palevioletred;
+        }
+        .navbar{
+            margin-left:0px;
+            padding-left: 10px;
+        }
+        .d-flex{
+            height:120vh;
+        }
+        table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    table, th, td {
+        border: 1px solid black;
+    }
+
+    th, td {
+        padding: 8px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+    </style>
+</head>
+<body>
+
+<div class="d-flex bg-secondary ">
+    <!-- Sidebar -->
+    <div class="sidebar  text-white p-3" style="width: 250px ;">
+        <h4>Church Admin</h4>
+        <ul class="nav flex-column">
+            <li class="nav-item">
+                <a class="nav-link text-white" href="#dashboard" data-bs-toggle="tab">Dashboard</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white" href="#members" data-bs-toggle="tab">Members</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white" href="#events" data-bs-toggle="tab">Events</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white" href="#donations" data-bs-toggle="tab">Donations</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white" href="#settings" data-bs-toggle="tab">Settings</a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container-fluid ">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+            <a class="navbar-brand" href="#">Church Dashboard</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-light logout-link" href="#">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="container mt-4 tab-content ">
+            <!-- Dashboard Tab -->
+            <div class="tab-pane fade show active" id="dashboard">
+                <h2>Welcome to the Admin Dashboard</h2>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body bg-warning">
+                                <h5 class="card-title">Total Members</h5>
+                                <p class="card-text">150</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body bg-info">
+                                <h5 class="card-title">Upcoming Events</h5>
+                                <p class="card-text">50</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body bg-danger">
+                                <h5 class="card-title">Total Donations</h5>
+                                <p class="card-text">$1,500</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Members Tab -->
+            <div class="tab-pane fade" id="members">
+                <h2>Add New Member</h2>
+                <form>
+                    <div class="mb-3">
+                        <label for="memberName" class="form-label text-warning fs-5">Name</label>
+                        <input type="text" class="form-control" id="memberName" placeholder="Enter member name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="memberEmail" class="form-label text-warning fs-5">Email</label>
+                        <input type="email" class="form-control" id="memberEmail" placeholder="Enter member email">
+                    </div>
+                    <div class="mb-3">
+                          <label for="phoneNumber" class="form-label text-warning fs-5">PhoneNumber</label>
+                          <input type="number" class="form-control text-warning" id="phoneNumber" placeholder="Enter phoneNumber">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Add Member</button>
+                </form>
+
+                <h3 class="mt-4">Current Members</h3>
+                <table class="table mt-3">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Mutesi Jane</td>
+                            <td>jane@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <td>Angeyo Reyna</td>
+                            <td>Reyna@gmail.com</td>
+                         </tr>   
+                        </tr>
+                             <td>Amos Orena</td>
+                             <td>Orena@gmail.com</td>
+                         </tr>   
+                         <tr>
+                            <td>Ashaba Joy</td>
+                            <td>joy@gmail.com</td>
+                         </tr> 
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Events Tab -->
+            <div class="tab-pane fade" id="events">
+                <h2>Add New Event</h2>
+                <form>
+                    <div class="mb-3">
+                        <label for="eventName" class="form-label text-info fs-5">Event Name</label>
+                        <input type="text" class="form-control  text-info " id="eventName" placeholder="Enter event name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="eventDate" class="form-label text-info fs-5 ">Event Date</label>
+                        <input type="date" class="form-control" id="eventDate">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Add Event</button>
+                </form>
+
+                <h3 class="mt-4">Upcoming Events</h3>
+                <table class="table mt-3">
+                    <thead>
+                        <tr>
+                            <th>Event Name</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Sunday Service</td>
+                            <td>2024-10-22</td>
+                        </tr>
+                        <tr>
+                            <td>Community Gathering</td>
+                            <td>2024-11-05</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Donations Tab -->
+            <div class="tab-pane fade" id="donations">
+                <h2>Add New Donation</h2>
+                <form>
+                    <div class="mb-3">
+                        <label for="donorName" class="form-label text-warning fs-5">Donor Name</label>
+                        <input type="text" class="form-control" id="donorName" placeholder="Enter donor name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="donationAmount" class="form-label text-warning fs-5">Amount</label>
+                        <input type="number" class="form-control" id="donationAmount" placeholder="Enter donation amount">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Add Donation</button>
+                </form>
+
+                <h3 class="mt-4">Recent Donations</h3>
+                <table class="table mt-3">
+                    <thead>
+                        <tr>
+                            <th>Donor Name</th>
+                            <th>Amount</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Jane Smith</td>
+                            <td>$100</td>
+                            <td>2024-10-10</td>
+                        </tr>
+                        <tr>
+                            <td>John Doe</td>
+                            <td>$200</td>
+                            <td>2024-10-15</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Settings Tab -->
+            <div class="tab-pane fade" id="settings">
+                <h2>Update Church Settings</h2>
+                <form>
+                    <div class="mb-3">
+                        <label for="churchName" class="form-label text-warning fs-5">Church Name</label>
+                        <input type="text" class="form-control" id="churchName" placeholder="Enter church name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="contactEmail" class="form-label text-warning">Contact Email</label>
+                        <input type="email" class="form-control" id="contactEmail" placeholder="Enter contact email">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Save Settings</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
